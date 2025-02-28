@@ -14,6 +14,8 @@ This is a simple e-commerce web application built using **ASP.NET Core MVC**. It
 - **Bootstrap**: For styling and responsive design.
 - **C#**: Backend logic and model definitions.
 - **Razor Views**: For rendering dynamic HTML content.
+  
+## Project Structure
 
 ECommerceApp/
 ├── Controllers/

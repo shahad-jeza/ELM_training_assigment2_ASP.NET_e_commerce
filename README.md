@@ -15,28 +15,6 @@ This is a simple e-commerce web application built using **ASP.NET Core MVC**. It
 - **C#**: Backend logic and model definitions.
 - **Razor Views**: For rendering dynamic HTML content.
   
-## Project Structure
-
-ECommerceApp/
-├── Controllers/
-│   ├── HomeController.cs
-│   ├── ProductController.cs
-│   └── OrderController.cs
-├── Data/
-│   └── ProductData.cs
-├── Models/
-│   ├── Product.cs
-│   ├── Order.cs
-│   ├── OrderDetails.cs
-│   ├── User.cs
-│   ├── OrderHistoryViewModel.cs
-│   └── ProductViewModel.cs
-├── Views/
-│   ├── Home/
-│   ├── Product/
-│   └── Order/
-├── wwwroot/
-└── Program.cs
 
 
 ## How to Run
@@ -50,3 +28,5 @@ ECommerceApp/
 3. run the app
    ```bash
    dotnet run
+
+feel free to contribute 🚀

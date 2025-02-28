@@ -23,26 +23,26 @@ namespace ECommerceApp.Controllers
             }
         };
 
-        [HttpGet("/Orders/{userId}")]
-        public IActionResult OrderHistory(int userId)
+  [HttpGet("/Orders/{userId}")]
+public IActionResult OrderHistory(int userId)
+{
+    var userOrders = _orders
+        .Where(o => o.UserId == userId)
+        .Select(o => new OrderHistoryViewModel
         {
-            var userOrders = _orders
-                .Where(o => o.UserId == userId)
-                .Select(o => new OrderHistoryViewModel
+            OrderId = o.OrderId,
+            OrderDate = o.OrderDate,
+            Products = o.OrderDetails
+                .Select(od => new ProductViewModel
                 {
-                    OrderId = o.OrderId,
-                    OrderDate = o.OrderDate,
-                    Products = o.OrderDetails
-                        .Select(od => new ProductViewModel
-                        {
-                            Name = ProductData.Products.First(p => p.ProductId == od.ProductId).Name,
-                            Quantity = od.Quantity,
-                            Price = ProductData.Products.First(p => p.ProductId == od.ProductId).Price
-                        }).ToList()
-                }).ToList();
+                    Name = ProductData.Products.First(p => p.ProductId == od.ProductId).Name,
+                    Quantity = od.Quantity,
+                    Price = ProductData.Products.First(p => p.ProductId == od.ProductId).Price
+                }).ToList()
+        }).ToList();
 
-            return View(userOrders);
-        }
+    return View(userOrders);
+}
 
         // POST /Order/PlaceOrder
         [HttpPost("/Order/PlaceOrder")]
